@@ -1,6 +1,6 @@
 $(document).ready( startApp );
 
-var twitter;
+var twitter, google, youtube;
 
 function startApp(){
     twitter = new Twitter('nba');
@@ -8,8 +8,12 @@ function startApp(){
         twitter.twitterAjaxCall();
     } 
     setInterval(twitter.twitterAjaxCall, 5000)
-    var gn = new GoogleNews();
-    gn.getData();
+
+    google = new GoogleNews();
+    google.getData();
+
+    youtube = new Youtube();
+    youtube.renderVideos();
     
 }
 

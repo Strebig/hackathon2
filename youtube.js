@@ -1,10 +1,3 @@
-$(document).ready(initializeApp);
-
-function initializeApp(){
-    const youtube = new Youtube();
-    youtube.renderVideos();
-}
-
 class Youtube {
     constructor () {
         this.renderVideos = this.renderVideos.bind(this);
