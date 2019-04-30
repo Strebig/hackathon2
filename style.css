@@ -1,0 +1,17 @@
+
+body {
+    background-color: #204d74;
+}
+.news-feed {
+    background-color: lightgrey;
+}
+.news-feed img {
+    width: 50px;
+    height: 50px;
+}
+.video {
+    background-color: #2b542c;
+}
+.twit {
+    background-color: red;
+}
