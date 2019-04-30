@@ -7,7 +7,7 @@ function startApp(){
     if (twitter.afterLoad === false){
         twitter.twitterAjaxCall();
     } 
-    setInterval(twitter.twitterAjaxCall, 5000)
+    setInterval(twitter.twitterAjaxCall, 5000000)
 
     google = new GoogleNews();
     google.getData();

@@ -9,15 +9,13 @@ renderVideos (){
         method: 'get',
         dataType: 'json',
         success: function(response){
+
             for (var i = 0; i < response.items.length; i++) {  //loops through video ID's, Images, and Titles of 10 Recent NBA highlights
-                let video = 'https://www.youtube.com/watch?v='+response.items[i].id.videoId;
-                let imgAttr = $('<img>').attr('src', response.items[i].snippet.thumbnails.default.url);
-                let link = $('<a>').attr('href', video);
-                let titleAttr = link.text(response.items[i].snippet.title); 
-                link.append(imgAttr);
-                link.append(titleAttr);
-                $('body').append(link);
-                $('body').append(titleAttr);
+
+                let video =  '<iframe width="280" height="157" src="https://www.youtube.com/embed/'+ response.items[i].id.videoId+ '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+                let titleAttr = $('<div>').text(response.items[i].snippet.title);
+                $('.video').append(titleAttr, video);
+
             }
         },
         error: function(){console.log('shit went south')}

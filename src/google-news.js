@@ -8,7 +8,7 @@ class GoogleNews {
 
     getData() {
         $.ajax({
-            url: 'https://newsapi.org/v2/everything?apiKey=4875328af25d48efad522d7dee93b271&q=lakers',
+            url: 'https://newsapi.org/v2/everything?apiKey=4875328af25d48efad522d7dee93b271&q=anaheim+ducks',
             method: 'get',
             dataType: 'json',
             success: this.newsArticle.bind(this)
