@@ -10,10 +10,10 @@ function startApp(){
     google.getData();
 
     youtube = new Youtube();
-    youtube.renderVideos('KC Chiefs');
+    youtube.renderVideos('nba');
 
-    // ticketmaster = new Ticketmaster();
-    // ticketmaster.getEventData();
+    ticketmaster = new Ticketmaster();
+    ticketmaster.getEventData();
     
 }
 

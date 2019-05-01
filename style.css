@@ -18,7 +18,7 @@ header {
     height: 5vh;
 }
 
-.news-feed, .twit, .video {
+.news-feed, .twit, .video{
     background-color: lightgrey;
     height: 75vh;
     overflow: scroll;
@@ -65,4 +65,36 @@ header {
 .input-group{
     margin-top: 7px;
 
+}
+.event_header{
+    background-color: lightgray;
+    margin-left: 15%;
+    margin-bottom: 10px;
+    height: 15%;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 40px;
+    
+}
+.event_container{
+    
+    margin-left: 15%;
+    margin-bottom: 10px;
+    background-color: white;
+    height: 100%;
+    font-size: 25px;
+    border-radius: 10px;
+
+}
+.events{
+    overflow-y: scroll;
+    height: 75vh;
+   
+}
+.getSeats{
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: #009cde;
+    color: white;
+    box-shadow: 2px 2px 2px grey;
 }

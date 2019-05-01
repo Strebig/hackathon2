@@ -5,6 +5,7 @@ class Brain{
         this.twitter;
         this.google;
         this.youtube;
+        this.ticketmaster;
         this.userChoice = this.userChoice.bind(this);
         this.teamClicked = 'nba';
     }
@@ -33,7 +34,7 @@ class Brain{
     
         setInterval(function(){
             this.twitter.twitterAjaxCall(this.teamClicked)
-        }, 5000)
+        }.bind(this), 5000)
     
         this.google = new GoogleNews();
         this.google.getData('nba');
@@ -41,6 +42,7 @@ class Brain{
         this.youtube = new Youtube();
         this.youtube.renderVideos('nba');
         
+
     }
 
     renderBtn(){

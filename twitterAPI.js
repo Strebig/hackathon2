@@ -21,7 +21,7 @@ class Twitter{
         }
 
         function twitterSuccess(response){
-            debugger;
+            // debugger;
             var tweets = response.tweets.statuses;
             for (var key in tweets){
                 var userId = tweets[key].id
