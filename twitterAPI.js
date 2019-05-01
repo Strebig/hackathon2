@@ -21,10 +21,6 @@ class Twitter{
         }
 
         function twitterSuccess(response){
-<<<<<<< HEAD
-=======
-            // debugger;
->>>>>>> a649980a947c9db6208f97c894e41dfe4f78fc44
             var tweets = response.tweets.statuses;
             if (!this.onLoad){
                 for (var i = 0; i < 5; i++){

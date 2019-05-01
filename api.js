@@ -1,19 +1,19 @@
-$(document).ready( startApp );
+// $(document).ready( startApp );
 
 
-function startApp(){
-    brain = new Brain();
-    brain.renderBtn();
-    brain.renderAjaxCalls();
+// function startApp(){
+//     brain = new Brain();
+//     brain.renderBtn();
+//     brain.renderAjaxCalls();
 
-    google = new GoogleNews();
-    google.getData();
+//     google = new GoogleNews();
+//     google.getData();
 
-    youtube = new Youtube();
-    youtube.renderVideos('nba');
+//     youtube = new Youtube();
+//     youtube.renderVideos('nba');
 
-    ticketmaster = new Ticketmaster();
-    ticketmaster.getEventData();
+//     ticketmaster = new Ticketmaster();
+//     ticketmaster.getEventData();
     
-}
+// }
 
