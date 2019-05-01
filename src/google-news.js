@@ -7,7 +7,6 @@ class GoogleNews {
     }
 
     getData(param) {
-        //console.log(param);
         $.ajax({
             url: 'https://newsapi.org/v2/everything?apiKey=4875328af25d48efad522d7dee93b271&q='+param,
             method: 'get',
@@ -18,7 +17,7 @@ class GoogleNews {
     }
     newsArticle(response) {
         //console.log(response.articles);
-        for (var index = 0; index < 11; index++){ //response.articles.length
+        for (var index = 0; index < response.articles.length; index++){ //response.articles.length
             let title = response.articles[index].title;
             let imgLink = response.articles[index].urlToImage;
             let imgInfo = $('<img>').attr('src', imgLink);
