@@ -46,16 +46,15 @@ header {
     width: 100px;
     height: 100px;
 }
-<<<<<<< HEAD
 .video {
     font-weight: bold;
     text-align: center;
     font-size: large;
 }
-.nav {
+/* .nav {
     height: 10vh;
     background-color: lightgrey;
-}
+} */
 .twitterContainer {
     border: 1px solid black;
     border-radius: 5%;
@@ -65,8 +64,7 @@ header {
 }
 .username {
     color: dodgerblue;
-=======
+}
 .input-group{
     margin-top: 7px;
->>>>>>> bea2a3397216432872edd6bbdf7c2f753e2b076d
 }
