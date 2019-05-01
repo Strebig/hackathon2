@@ -15,9 +15,10 @@ class Brain{
     }
 
     ajaxCall( team ){
-        // $('.news-feed').empty();
+        $('.news-feed').empty();
         $('.twit').empty();
         this.twitter.twitterAjaxCall(team);
+        this.google.getData(team);
         
     }
 

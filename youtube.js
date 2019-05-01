@@ -5,7 +5,7 @@ class Youtube {
 
 renderVideos (){
     let ajaxOptions = {
-        url: 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=nba&type=video&key=AIzaSyC5VvBHUfI_GQ2QWcZzAnclQisziSaOMUk',
+        url: 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=nba&type=video&key=AIzaSyA5O8p3O4xkblZiUx9X0Kt-2HUKMdg802w',//AIzaSyA5O8p3O4xkblZiUx9X0Kt-2HUKMdg802w
         method: 'get',
         dataType: 'json',
         success: function(response){

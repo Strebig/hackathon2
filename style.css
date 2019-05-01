@@ -14,24 +14,25 @@ button:active {
 header {
     font-size: 50px;
 }
-.news-feed {
+
+.news-feed, .twit, .video {
     background-color: lightgrey;
+    height: 80vh;
+    overflow: scroll;
 }
 .news-feed img {
     width: 50px;
     height: 50px;
 }
-.video {
-    background-color: #2b542c;
 
+.video {
+    overflow: hidden;
 }
 .video img {
     width: 100px;
     height: 100px;
 }
-.twit {
-    background-color: whitesmoke;
-    color: black;
-    text-shadow: lightgrey;
-
+.nav {
+    height: 10vh;
+    background-color: lightgrey;
 }
