@@ -21,7 +21,7 @@ class Twitter{
         }
 
         function twitterSuccess(response){
-            debugger;
+            //debugger;
             var tweets = response.tweets.statuses;
             if (!this.onLoad){
                 for (var i = 0; i < 3; i++){

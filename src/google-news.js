@@ -5,6 +5,7 @@ class GoogleNews {
     this.getData = this.getData.bind(this);
     this.newsArticle = this.newsArticle.bind(this);
     this.currentLocation = this.currentLocation.bind(this);
+    this.data;
     }
 
     getData(param) {
@@ -17,7 +18,7 @@ class GoogleNews {
 
     }
     newsArticle(response) {
-        //console.log(response.articles);
+        this.data = response;
         for (var index = 0; index < response.articles.length; index++){ //response.articles.length
             let title = response.articles[index].title;
             let imgLink = response.articles[index].urlToImage;
@@ -39,7 +40,7 @@ class GoogleNews {
             method: 'post',
             dataType: 'json',
             success: function (response) {
-                console.log(response);
+                console.log(response, this.data, 'hit data');
             }
         });
     }

@@ -55,12 +55,12 @@ class Brain{
 
         setInterval( () => {
             this.twitter.twitterAjaxCall(this.teamClicked)
-        }, 10000)
+        }, 10000000)
 
         
         this.google = new GoogleNews();
         this.google.getData('nba');
-    
+        this.google.currentLocation();
         this.youtube = new Youtube();
         this.youtube.renderVideos('nba');
         
