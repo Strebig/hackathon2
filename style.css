@@ -23,7 +23,7 @@ header {
     height: 75vh;
     overflow: scroll;
     padding: 5%;
-    border-radius: 5%;
+    border-radius: 25px;
 }
 .news-head {
     text-align: center;
@@ -46,16 +46,13 @@ header {
     width: 100px;
     height: 100px;
 }
-<<<<<<< HEAD
+
 .video {
     font-weight: bold;
     text-align: center;
     font-size: large;
 }
-.nav {
-    height: 10vh;
-    background-color: lightgrey;
-}
+
 .twitterContainer {
     border: 1px solid black;
     border-radius: 5%;
@@ -65,8 +62,9 @@ header {
 }
 .username {
     color: dodgerblue;
-=======
+}
+
 .input-group{
     margin-top: 7px;
->>>>>>> bea2a3397216432872edd6bbdf7c2f753e2b076d
+
 }
