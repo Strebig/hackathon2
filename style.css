@@ -34,7 +34,6 @@ header {
     width: 100px;
     height: 100px;
 }
-.nav {
-    height: 10vh;
-    background-color: lightgrey;
+.input-group{
+    margin-top: 7px;
 }

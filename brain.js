@@ -1,6 +1,6 @@
 class Brain{
     constructor(){
-        this.teams = ['Lakers', 'Celtics', 'Golden State Warriors'];
+        this.teams = ['Lakers', 'Celtics', 'Golden State Warriors', 'Ducks'];
         var twitter, google, youtube, brain;
         this.twitter;
         this.google;
@@ -40,8 +40,10 @@ class Brain{
 
     renderBtn(){
         for (var value of this.teams){
-            var button = $('<button>').addClass('teams').text(value).click(this.userChoice);
-            $('.navbar').append(button);
+            var listItem = $('<li>');
+            var link = $('<a>').addClass('teams').text(value).click(this.userChoice);
+            listItem.append(link);
+            $('.dropdown-menu').append(listItem);
         }
         
     }
