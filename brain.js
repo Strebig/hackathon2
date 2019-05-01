@@ -90,11 +90,14 @@ class Brain{
         $.ajax(teams)
     }
 
+
+
     renderBtn( team ){
         var listItem = $('<li>');
-        var link = $('<a>').text(team).click(this.userChoice);
+        var link = $('<a>').text(team).on('click', this.userChoice);
         listItem.append(link);
         $('.dropdown-menu').append(listItem);
+
     }
 
 

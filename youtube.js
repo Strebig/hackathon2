@@ -8,14 +8,12 @@ class Youtube {
 
     getData (search) {
         let ajaxOptions = {
-            // url: 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=6&q='+search+'&type=video&key=AIzaSyA5O8p3O4xkblZiUx9X0Kt-2HUKMdg802w',
-            url: 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q='+search+'&type=video&key=AIzaSyC5VvBHUfI_GQ2QWcZzAnclQisziSaOMUk',
+            url: 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=6&q='+search+'&type=video&key=AIzaSyA5O8p3O4xkblZiUx9X0Kt-2HUKMdg802w',
+            // url: 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q='+search+'&type=video&key=AIzaSyC5VvBHUfI_GQ2QWcZzAnclQisziSaOMUk',
             method: 'get',
             dataType: 'json',
             success: this.videoSuccess.bind(this),
-
-            error: function(){console.log('shit went south')}
-            
+            error: function(){console.log('Error')} 
         }
         
         $.ajax(ajaxOptions);
@@ -36,7 +34,13 @@ class Youtube {
             let titleAttr = $('<div>').text(this.videoData.items[index].snippet.title);
             $('.video').append(titleAttr, video);
         }
-        this.maxResults = this.maxResults + 3;
+
+        if (this.maxResults >= 47){
+            this.maxResults = 47;
+        } else {
+            this.maxResults = this.maxResults + 3;
+        }
+        
     }
 
     handleInfiniteScroll(event) {
