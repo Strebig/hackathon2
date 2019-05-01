@@ -11,7 +11,7 @@ renderVideos (search){
         dataType: 'json',
         success: function(response){
             for (var i = 0; i < response.items.length; i++) {  //loops through video ID's, Images, and Titles of 10 Recent NBA highlights
-                let video =  '<iframe width="280" height="157" src="https://www.youtube.com/embed/'+ response.items[i].id.videoId+ '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+                let video =  '<iframe width="100%" height="300" src="https://www.youtube.com/embed/'+ response.items[i].id.videoId+ '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
                 let titleAttr = $('<div>').text(response.items[i].snippet.title);
                 $('.video').append(titleAttr, video);
             }
