@@ -2,12 +2,12 @@ class Twitter{
     constructor(){
         this.twitterAjaxCall = this.twitterAjaxCall.bind(this)
         this.id = [];
-        this.afterLoad = false;
+        this.onLoad = false;
         this.checkIdExists = this.checkIdExists.bind(this)
     }
 
     twitterAjaxCall(team){
-        this.afterLoad = true;
+        
         var twitterAjax = {
             url: 'http://s-apis.learningfuze.com/hackathon/twitter/index.php',
             dataType: 'json',
@@ -22,22 +22,37 @@ class Twitter{
 
         function twitterSuccess(response){
             debugger;
+            console.log('ran');
             var tweets = response.tweets.statuses;
-            for (var key in tweets){
-                var userId = tweets[key].id
-                if (this.checkIdExists(userId , this.id)){
+            if (!this.onLoad){
+                for (var key in tweets){
+                    var userId = tweets[key].id
                     this.id.push(userId);
                     var userName = $('<div class="username">').text(`-${tweets[key].user['screen_name']}`);
                     var tweetContainer = $('<div class="twitterContainer">')
                     var tweet = $('<div class="tweet">').text(tweets[key].text);
                     tweetContainer.append(tweet, userName);
                     $('.twit').prepend(tweetContainer)
+                    this.onLoad = true;
+                    }     
                 } else {
-                    return false;
-                }
-                
-            } 
+                debugger;
+                for (var key in tweets){
+                    var userId = tweets[key].id
+                    if (this.checkIdExists(userId , this.id)){
+                        this.id.push(userId);
+                        var userName = $('<div class="username">').text(`-${tweets[key].user['screen_name']}`);
+                        var tweetContainer = $('<div class="twitterContainer">')
+                        var tweet = $('<div class="tweet">').text(tweets[key].text);
+                        tweetContainer.append(tweet, userName);
+                        $('.twit').prepend(tweetContainer)
+                        return;
+                    }     
+                    return;
+                } 
+            }
         }
+
         $.ajax(twitterAjax);
     }
 
