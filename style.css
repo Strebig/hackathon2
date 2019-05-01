@@ -11,7 +11,15 @@ body {
 }
 .video {
     background-color: #2b542c;
+
+}
+.video img {
+    width: 100px;
+    height: 100px;
 }
 .twit {
-    background-color: red;
+    background-color: whitesmoke;
+    color: black;
+    text-shadow: lightgrey;
+
 }

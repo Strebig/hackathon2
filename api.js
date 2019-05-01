@@ -1,15 +1,19 @@
 $(document).ready( startApp );
 
-var twitter;
+var twitter, google, youtube;
 
 function startApp(){
     twitter = new Twitter('nba');
     if (twitter.afterLoad === false){
         twitter.twitterAjaxCall();
     } 
-    setInterval(twitter.twitterAjaxCall, 5000)
-    var gn = new GoogleNews();
-    gn.getData();
+    setInterval(twitter.twitterAjaxCall, 5000000)
+
+    google = new GoogleNews();
+    google.getData();
+
+    youtube = new Youtube();
+    youtube.renderVideos();
     
 }
 

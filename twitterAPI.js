@@ -19,6 +19,7 @@ class Twitter{
         }
 
         function twitterSuccess(response){
+            console.log(response);
             console.log(this.id);
             var tweets = response.tweets.statuses;
             for (var key in tweets){
@@ -29,7 +30,7 @@ class Twitter{
                     var tweetContainer = $('<div class="twitterContainer">')
                     var tweet = $('<div class="tweet">').text(tweets[key].text);
                     tweetContainer.append(tweet, userName);
-                    $('body').prepend(tweetContainer)
+                    $('.twit').prepend(tweetContainer)
                 } else {
                     return false;
                 }
