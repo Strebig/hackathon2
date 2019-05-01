@@ -2,6 +2,18 @@
 body {
     background-color: #204d74;
 }
+
+button:active {
+    background-color: grey;
+}
+
+.activeBtn {
+    background-color: grey;
+}
+
+header {
+    font-size: 50px;
+}
 .news-feed {
     background-color: lightgrey;
 }

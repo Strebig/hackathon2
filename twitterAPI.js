@@ -1,26 +1,23 @@
 class Twitter{
-    constructor(category){
-        this.category = category
+    constructor(){
         this.twitterAjaxCall = this.twitterAjaxCall.bind(this)
         this.id = [];
         this.afterLoad = false;
         this.checkIdExists = this.checkIdExists.bind(this)
     }
 
-    twitterAjaxCall(){
+    twitterAjaxCall(team){
         this.afterLoad = true;
         var twitterAjax = {
             url: 'http://s-apis.learningfuze.com/hackathon/twitter/index.php',
             dataType: 'json',
             data:{
-                search_term: 'nba'
+                search_term: team
             },
             success: twitterSuccess.bind(this)
         }
 
         function twitterSuccess(response){
-            console.log(response);
-            console.log(this.id);
             var tweets = response.tweets.statuses;
             for (var key in tweets){
                 var userId = tweets[key].id
