@@ -5,13 +5,14 @@ class Brain{
         this.twitter;
         this.google;
         this.youtube;
-        this.userChoice = this.userChoice.bind(this)
+        this.userChoice = this.userChoice.bind(this);
+        this.teamClicked = 'nba';
     }
 
     userChoice(){
         console.log(event.currentTarget);
-        var userChoice = $(event.currentTarget).text();
-        this.ajaxCall(userChoice);
+        this.teamClicked = $(event.currentTarget).text();
+        this.ajaxCall(this.teamClicked);
     }
 
     ajaxCall( team ){
@@ -25,27 +26,29 @@ class Brain{
     }
 
     renderAjaxCalls(){
-        this.twitter = new Twitter('nba');
+        this.twitter = new Twitter();
         if (this.twitter.afterLoad === false){
-            this.twitter.twitterAjaxCall();
+            this.twitter.twitterAjaxCall('nba');
         } 
     
-        setInterval(this.twitter.twitterAjaxCall, 5000000)
+        setInterval(function(){
+            this.twitter.twitterAjaxCall(this.teamClicked)
+        }, 5000)
     
         this.google = new GoogleNews();
         this.google.getData('nba');
     
         this.youtube = new Youtube();
         this.youtube.renderVideos('nba');
-    
+        
     }
 
     renderBtn(){
-        debugger;
         for (var value of this.teams){
-            var button = $('<button>').addClass('teams').text(value).click(this.userChoice);
-            $('.navbar').append(button);
+            var listItem = $('<li>');
+            var link = $('<a>').addClass('teams').text(value).click(this.userChoice);
+            listItem.append(link);
+            $('.dropdown-menu').append(listItem);
         }
-        
     }
 }

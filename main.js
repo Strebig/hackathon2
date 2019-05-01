@@ -11,6 +11,11 @@ function startApp(){
 
     // youtube = new Youtube();
     // youtube.renderVideos('nhl ducks');
+
+
+    // ticketmaster = new Ticketmaster();
+    // ticketmaster.getEventData();
+
     
 }
 
