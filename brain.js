@@ -17,8 +17,10 @@ class Brain{
     ajaxCall( team ){
         $('.news-feed').empty();
         $('.twit').empty();
+        $('.video').empty();
         this.twitter.twitterAjaxCall(team);
         this.google.getData(team);
+        this.youtube.renderVideos(team);
         
     }
 
@@ -31,14 +33,15 @@ class Brain{
         setInterval(this.twitter.twitterAjaxCall, 5000000)
     
         this.google = new GoogleNews();
-        this.google.getData();
+        this.google.getData('nba');
     
-        // youtube = new Youtube();
-        // youtube.renderVideos();
+        this.youtube = new Youtube();
+        this.youtube.renderVideos('nba');
     
     }
 
     renderBtn(){
+        debugger;
         for (var value of this.teams){
             var button = $('<button>').addClass('teams').text(value).click(this.userChoice);
             $('.navbar').append(button);

@@ -17,7 +17,7 @@ header {
 
 .news-feed, .twit, .video {
     background-color: lightgrey;
-    height: 80vh;
+    height: 75vh;
     overflow: scroll;
     padding: 5%;
     border-radius: 5%;
