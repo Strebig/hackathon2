@@ -38,12 +38,6 @@ header {
     width: calc(100% - 50px);
     display: inline-block;
 }
-.video {
-    background-color: #2b542c;
-    display: inline-block;
-    overflow: hidden;
-
-}
 .video img {
     width: 100px;
     height: 100px;
