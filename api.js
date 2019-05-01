@@ -6,5 +6,11 @@ function startApp(){
     brain.renderBtn();
     brain.renderAjaxCalls();
 
+    google = new GoogleNews();
+    google.getData();
+
+    youtube = new Youtube();
+    youtube.renderVideos('nhl ducks');
+    
 }
 
