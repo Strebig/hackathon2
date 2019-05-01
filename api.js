@@ -13,7 +13,7 @@ function startApp(){
     google.getData();
 
     youtube = new Youtube();
-    youtube.renderVideos();
+    youtube.renderVideos('nhl ducks');
     
 }
 

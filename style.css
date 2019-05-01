@@ -11,6 +11,7 @@ body {
 }
 .video {
     background-color: #2b542c;
+    display: inline-block;
 
 }
 .video img {
