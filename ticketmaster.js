@@ -1,7 +1,7 @@
-$(document).ready(function(){
+// $(document).ready(function(){
 
 
-})
+// })
 
 
 class Ticketmaster {
@@ -10,37 +10,41 @@ class Ticketmaster {
         
         this.getEventData = this.getEventData.bind(this);
     }
-
+    getEventData() {
+        console.log('getting data');
+    
+        var ajaxConfig = {
+            dataType: "json",
+            url: "https://app.ticketmaster.com/discovery/v2/events.json?apikey=H0mGFbjb56iABO6ObBkeRcJshhHZCAek&keyword=basketball&priceRanges=USD&startDateTime&id",
+            method: "get",
+            success: function(response){
+                console.log("Events: ", response);
+                    var container = container;
+                    for(var i=0; i < response._embedded.events.length; i++){
+                        // console.log(response._embedded.events.length);
+                        container = $("<div>",{
+                            class: 'event_container' 
+                        });
+                        var name = $("<li>").text(response._embedded.events[i].name);
+                        // console.log("name", name);
+                        var dates = $('dates').addClass("Dates: ").text(response._embedded.events[i].dates);
+                        console.log(response._embedded.events[i].dates);
+                        var priceRanges = $("priceRanges").text(response._embedded.events[i].priceRanges);
+                        // console.log("priceRanges", priceRanges);
+                        var tickets = response._embedded.events[i].url;
+                        var button = $('<a target="_blank">').attr("href", tickets );
+                        var getSeats = $('<button class="getSeats">').text("Find Tickets");
+                        // console.log(game);
+                        // console.log('getSeats', getSeats);
+                        $('body').append(container);
+                        button.append(getSeats);
+                        $('.events').append(name, button);
+                        
+                    };
+            },
+        }
+        $.ajax(ajaxConfig);
+    }
 
 }
-function getEventData() {
-    console.log('getting data');
 
-    events = this.events;
-    var ajaxConfig = {
-        dataType: "json",
-        url: "https://app.ticketmaster.com/discovery/v2/events.json?apikey=H0mGFbjb56iABO6ObBkeRcJshhHZCAek&keyword=NBA&maxResult=5&priceRanges=USD&dates=localDate",
-        method: "get",
-        success: function(response){
-            console.log("Events: ", response);
-           
-                for(var i=0; i < response._embedded.events.length; i++){
-                    console.log(response._embedded.events.length);
-                    var container = $("<div>",{
-                        class: 'event_container' 
-                    });
-                    var name = $("<div>").text(response._embedded.events[i].name);
-                    console.log("name", name);
-                    var dates = $("dates").text(response._embedded.events[i].dates);
-                    console.log("dates", dates);
-                    var priceRanges = $("priceRanges").text(response._embedded.events[i].priceRanges);
-                    console.log("priceRanges", priceRanges);
-                }
-        
-            
-            
-
-        },
-    };
-    $.ajax(ajaxConfig);
-}

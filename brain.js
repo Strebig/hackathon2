@@ -5,6 +5,7 @@ class Brain{
         this.twitter;
         this.google;
         this.youtube;
+        this.ticketmaster;
         this.userChoice = this.userChoice.bind(this);
         this.renderBtn = this.renderBtn.bind(this);
         this.searchItem = this.searchItem.bind(this);
@@ -51,6 +52,7 @@ class Brain{
         this.twitter = new Twitter();
         if (!this.twitter.onLoad){
             this.twitter.twitterAjaxCall(this.teamClicked)
+<<<<<<< HEAD
         }
 
         setInterval( () => {
@@ -58,12 +60,17 @@ class Brain{
         }, 10000)
 
         
+=======
+        }.bind(this), 5000)
+    
+>>>>>>> a649980a947c9db6208f97c894e41dfe4f78fc44
         this.google = new GoogleNews();
         this.google.getData('nba');
     
         this.youtube = new Youtube();
         this.youtube.getData('nba');
         
+
     }
 
     ballsDontLie(){
