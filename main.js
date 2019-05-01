@@ -9,8 +9,8 @@ function startApp(){
     google = new GoogleNews();
     google.getData();
 
-    youtube = new Youtube();
-    youtube.renderVideos('nhl ducks');
+    // youtube = new Youtube();
+    // youtube.renderVideos('nhl ducks');
     
 }
 

@@ -14,10 +14,14 @@ class Twitter{
             data:{
                 search_term: team
             },
-            success: twitterSuccess.bind(this)
+            success: twitterSuccess.bind(this),
+            error: function(response){
+                console.log(response);
+            }
         }
 
         function twitterSuccess(response){
+            debugger;
             var tweets = response.tweets.statuses;
             for (var key in tweets){
                 var userId = tweets[key].id
