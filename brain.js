@@ -43,7 +43,7 @@ class Brain{
 
         //youtube
         $('.video').empty();
-        this.youtube.renderVideos(team);
+        this.youtube.getData(team);
         
     }
 
@@ -62,7 +62,7 @@ class Brain{
         this.google.getData('nba');
     
         this.youtube = new Youtube();
-        this.youtube.renderVideos('nba');
+        this.youtube.getData('nba');
         
     }
 
