@@ -21,14 +21,9 @@ class Twitter{
         }
 
         function twitterSuccess(response){
-<<<<<<< HEAD
-            debugger;
-=======
-            console.log('ran');
->>>>>>> d6adefa9a8a6e2f386f2bc9499e07fc27ca010ee
             var tweets = response.tweets.statuses;
             if (!this.onLoad){
-                for (var i = 0; i < 3; i++){
+                for (var i = 0; i < 5; i++){
                     var userId = tweets[i].id
                     this.id.push(userId);
                     var userName = $('<div class="username">').text(`-${tweets[i].user['screen_name']}`);
@@ -39,7 +34,6 @@ class Twitter{
                     this.onLoad = true;
                     }     
                 } else {
-                debugger;
                 for (var key in tweets){
                     var userId = tweets[key].id
                     var lastTweet = $('.twitterContainer:nth-last-child(1)')

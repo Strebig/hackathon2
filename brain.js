@@ -75,7 +75,6 @@ class Brain{
         }
 
         function renderTeamName(response){
-            console.log(response.data);
             for (var value of response.data){
                 var teamName = value.full_name;
                 this.renderBtn(teamName);

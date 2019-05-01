@@ -25,7 +25,6 @@ class Youtube {
 
     videoSuccess(response) {
         this.videoData = response;
-        console.log('rendering Videos')
         this.renderVideos();
     }
 
