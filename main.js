@@ -1,9 +1,10 @@
 $(document).ready( startApp );
 
 var brain;
+// var ticketmaster;
 
 function startApp(){
-
+    debugger;
     brain = new Brain();
     brain.onStart();
     // brain.renderAjaxCalls();

@@ -15,7 +15,8 @@ class Ticketmaster {
     
         var ajaxConfig = {
             dataType: "json",
-            url: "https://app.ticketmaster.com/discovery/v2/events.json?apikey=H0mGFbjb56iABO6ObBkeRcJshhHZCAek&keyword=basketball&priceRanges=USD&startDateTime&id",
+            url: "https://app.ticketmaster.com/discovery/v2/events.json?apikey=wsAc3rLVG2FAtb1aaUPnSMdXmNgKgAEd&keyword=basketball&priceRanges=USD&startDateTime&id",
+            // url: "https://app.ticketmaster.com/discovery/v2/events.json?apikey=H0mGFbjb56iABO6ObBkeRcJshhHZCAek&keyword=basketball&priceRanges=USD&startDateTime&id",
             method: "get",
             success: function(response){
                 console.log("Events: ", response);

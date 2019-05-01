@@ -65,7 +65,7 @@ class Brain{
     
         this.youtube = new Youtube();
         this.youtube.getData('nba');
-
+        
         this.ticketmaster = new Ticketmaster();
         this.ticketmaster.getEventData();
         
