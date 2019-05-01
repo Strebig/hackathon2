@@ -7,8 +7,24 @@ class Brain{
         this.youtube;
         this.userChoice = this.userChoice.bind(this);
         this.renderBtn = this.renderBtn.bind(this);
+        this.searchItem = this.searchItem.bind(this);
         this.teamClicked = 'nba';
 
+    }
+
+    onStart(){
+        this.renderAjaxCalls();
+        this.ballsDontLie();
+        this.clickHandler();
+    }
+
+    clickHandler(){
+        $('button.search').on('click', this.searchItem )
+    }
+
+    searchItem(){
+        var searchRequest = $('input.searchInput').val();
+        this.ajaxCall(searchRequest);
     }
 
     userChoice(){
@@ -33,26 +49,21 @@ class Brain{
 
     renderAjaxCalls(){
         this.twitter = new Twitter();
-    
+        if (!this.twitter.onLoad){
+            this.twitter.twitterAjaxCall(this.teamClicked)
+        }
+
         setInterval( () => {
             this.twitter.twitterAjaxCall(this.teamClicked)
-        }, 5000000)
+        }, 10000)
 
-
+        
         this.google = new GoogleNews();
         this.google.getData('nba');
     
         this.youtube = new Youtube();
         this.youtube.renderVideos('nba');
         
-    }
-
-    renderBtn( team ){
-
-        var listItem = $('<li>');
-        var link = $('<a>').addClass('teams').text(team).click(this.userChoice);
-        listItem.append(link);
-        $('.dropdown-menu').append(listItem);
     }
 
     ballsDontLie(){
@@ -73,6 +84,14 @@ class Brain{
     
         $.ajax(teams)
     }
+
+    renderBtn( team ){
+        var listItem = $('<li>');
+        var link = $('<a>').text(team).click(this.userChoice);
+        listItem.append(link);
+        $('.dropdown-menu').append(listItem);
+    }
+
 
 
 }

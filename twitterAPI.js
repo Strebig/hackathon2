@@ -22,15 +22,14 @@ class Twitter{
 
         function twitterSuccess(response){
             debugger;
-            console.log('ran');
             var tweets = response.tweets.statuses;
             if (!this.onLoad){
-                for (var key in tweets){
-                    var userId = tweets[key].id
+                for (var i = 0; i < 3; i++){
+                    var userId = tweets[i].id
                     this.id.push(userId);
-                    var userName = $('<div class="username">').text(`-${tweets[key].user['screen_name']}`);
+                    var userName = $('<div class="username">').text(`-${tweets[i].user['screen_name']}`);
                     var tweetContainer = $('<div class="twitterContainer">')
-                    var tweet = $('<div class="tweet">').text(tweets[key].text);
+                    var tweet = $('<div class="tweet">').text(tweets[i].text);
                     tweetContainer.append(tweet, userName);
                     $('.twit').prepend(tweetContainer)
                     this.onLoad = true;
@@ -39,16 +38,20 @@ class Twitter{
                 debugger;
                 for (var key in tweets){
                     var userId = tweets[key].id
+                    var lastTweet = $('.twitterContainer:nth-last-child(1)')
                     if (this.checkIdExists(userId , this.id)){
+                        $('.twitterContainer:nth-last-child(1)').fadeOut(300, function(){
+                            $('.twitterContainer:nth-last-child(1)').remove()
+                        });
                         this.id.push(userId);
                         var userName = $('<div class="username">').text(`-${tweets[key].user['screen_name']}`);
                         var tweetContainer = $('<div class="twitterContainer">')
                         var tweet = $('<div class="tweet">').text(tweets[key].text);
                         tweetContainer.append(tweet, userName);
-                        $('.twit').prepend(tweetContainer)
+                        // tweetContainer.fadeIn(300, function(){ $('.twit').prepend(tweetContainer)});
+                        $('.twit').prepend(tweetContainer).fadeIn(400);
                         return;
                     }     
-                    return;
                 } 
             }
         }

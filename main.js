@@ -5,9 +5,10 @@ var brain;
 function startApp(){
 
     brain = new Brain();
-    brain.renderAjaxCalls();
+    brain.onStart();
+    // brain.renderAjaxCalls();
     // brain.renderBtn();
-    brain.ballsDontLie();
+    // brain.ballsDontLie();
 
 
     // google = new GoogleNews();

@@ -66,10 +66,34 @@ header {
 
 .input-group{
     margin-top: 7px;
+    position: relative;
 }
 
 .news-head > img {
     width: 25px;
     height: 25px;
+
+}
+
+ul .dropdown-menu {
+    width: 97vh;
+    height: 45vh;
+    /* background-color: black; */
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.dropdown-menu li{
+    width: 23vh;
+    display: inline-block;
+    height: 5vh;
+    margin: 2px 4px;
+    text-align: center;
+    font-weight: bolder;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.dropdown-menu a{
+    height: 100%;
 
 }
