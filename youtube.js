@@ -6,6 +6,23 @@ class Youtube {
         this.videoData;
     }
 
+    // function learningFuzeYtAPI(){
+    //     $.ajax({
+    //         url: 'http://s-apis.learningfuze.com/hackathon/youtube/search.php',
+    //         dataType: 'json',
+    //         method: 'post',
+    //         data: {
+    //             q: 'nba',
+    //             maxResults: 5,
+    //             type: 'video',
+    //             detailLevel: 'verbose'
+    //         },
+    //         success: function(response){
+    //             console.log(response);
+    //             vidRender(response.video)
+    //         }
+    //     })
+
     getData (search) {
         let ajaxOptions = {
             url: 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=6&q='+search+'&type=video&key=AIzaSyA5O8p3O4xkblZiUx9X0Kt-2HUKMdg802w',

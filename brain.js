@@ -1,14 +1,16 @@
 class Brain{
     constructor(){
-        this.teams = ['Lakers', 'Celtics', 'Golden State Warriors'];
+        // this.teams = ['Lakers', 'Celtics', 'Golden State Warriors'];
         var twitter, google, youtube;
         this.twitter;
         this.google;
         this.youtube;
         this.ticketmaster;
         this.userChoice = this.userChoice.bind(this);
+        this.eventUserChoice = this.eventUserChoice.bind(this);
         this.renderBtn = this.renderBtn.bind(this);
         this.searchItem = this.searchItem.bind(this);
+        this.eventSearchItem = this.eventSearchItem.bind(this);
         this.teamClicked = 'nba';
 
     }
@@ -21,6 +23,7 @@ class Brain{
 
     clickHandler(){
         $('button.search').on('click', this.searchItem )
+        $('button.eventSearchBtn').on('click', this.eventSearchItem)
     }
 
     searchItem(){
@@ -28,10 +31,23 @@ class Brain{
         this.ajaxCall(searchRequest);
     }
 
+    eventSearchItem(){
+        var eventSearchRequest = $('#eventInput').val();
+        this.ticketmaster.getEventData(eventSearchRequest)
+        
+    }
+
     userChoice(){
         this.teamClicked = $(event.currentTarget).text();
         this.ajaxCall(this.teamClicked);
     }
+
+    eventUserChoice(){
+        this.teamClicked = $(event.currentTarget).text();
+        this.ticketmaster.getEventData(this.teamClicked);
+    }
+
+    
 
     ajaxCall( team ){
         //google news
@@ -56,7 +72,7 @@ class Brain{
 
         setInterval( () => {
             this.twitter.twitterAjaxCall(this.teamClicked)
-        }, 10000)
+        }, 1000000)
 
         
 
@@ -67,7 +83,7 @@ class Brain{
         this.youtube.getData('nba');
         
         this.ticketmaster = new Ticketmaster();
-        this.ticketmaster.getEventData();
+        this.ticketmaster.getEventData('nba');
         
 
     }
@@ -96,7 +112,12 @@ class Brain{
         var listItem = $('<li>');
         var link = $('<a>').text(team).on('click', this.userChoice);
         listItem.append(link);
-        $('.dropdown-menu').append(listItem);
+        $('#index').append(listItem);
+
+        var eventListItem = $('<li>')
+        var eventLink = $('<a>').text(team).on('click', this.eventUserChoice);
+        eventListItem.append(eventLink)
+        $('#events').append(eventListItem);
 
     }
 
