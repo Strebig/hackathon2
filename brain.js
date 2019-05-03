@@ -1,6 +1,5 @@
 class Brain{
     constructor(){
-        // this.teams = ['Lakers', 'Celtics', 'Golden State Warriors'];
         var twitter, google, youtube;
         this.twitter;
         this.google;

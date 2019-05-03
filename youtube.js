@@ -50,7 +50,7 @@ class Youtube {
         if (this.maxResults > 47){
             return;
         } else {
-            for (index; index < this.maxResults + 3; index++) {  //loops through video ID's, Images, and Titles of 10 Recent NBA highlights
+            for (index; index < this.maxResults + 3; index++) {  
                 let video =  '<iframe width="100%" height="300" src="https://www.youtube.com/embed/'+ this.videoData.items[index].id.videoId+ '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
                 let titleAttr = $('<div>').text(this.videoData.items[index].snippet.title);
                 $('.video').append(titleAttr, video);
@@ -62,10 +62,7 @@ class Youtube {
     }
 
     handleInfiniteScroll(event) {
-        // console.log(event)
-        // console.log("Scroll Top Value", event.target.scrollTop);
-        // console.log("Scroll Height Value ", event.target.scrollHeight);
-        // console.log("Offset Top Height ", event.target.offsetHeight);
+       
         if(event.target.scrollTop + event.target.offsetHeight > event.target.scrollHeight - 50) {
             this.renderVideos();
         }
