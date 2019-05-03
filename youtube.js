@@ -25,8 +25,8 @@ class Youtube {
 
     getData (search) {
         let ajaxOptions = {
-            url: 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=6&q='+search+'&type=video&key=AIzaSyA5O8p3O4xkblZiUx9X0Kt-2HUKMdg802w',
-            // url: 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q='+search+'&type=video&key=AIzaSyC5VvBHUfI_GQ2QWcZzAnclQisziSaOMUk',
+            // url: 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=51&q='+search+'&type=video&key=AIzaSyA5O8p3O4xkblZiUx9X0Kt-2HUKMdg802w',
+            url: 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q='+search+'&type=video&key=AIzaSyC5VvBHUfI_GQ2QWcZzAnclQisziSaOMUk',
             method: 'get',
             dataType: 'json',
             success: this.videoSuccess.bind(this),
@@ -44,18 +44,19 @@ class Youtube {
     }
 
     renderVideos () {
+        debugger;
         var index = this.maxResults;
-
-        for (index; index < this.maxResults + 3; index++) {  //loops through video ID's, Images, and Titles of 10 Recent NBA highlights
-            let video =  '<iframe width="100%" height="300" src="https://www.youtube.com/embed/'+ this.videoData.items[index].id.videoId+ '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-            let titleAttr = $('<div>').text(this.videoData.items[index].snippet.title);
-            $('.video').append(titleAttr, video);
-        }
-
-        if (this.maxResults >= 47){
-            this.maxResults = 47;
+        console.log(index)
+        if (this.maxResults > 47){
+            return;
         } else {
-            this.maxResults = this.maxResults + 3;
+            for (index; index < this.maxResults + 3; index++) {  //loops through video ID's, Images, and Titles of 10 Recent NBA highlights
+                let video =  '<iframe width="100%" height="300" src="https://www.youtube.com/embed/'+ this.videoData.items[index].id.videoId+ '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+                let titleAttr = $('<div>').text(this.videoData.items[index].snippet.title);
+                $('.video').append(titleAttr, video);
+                
+            }
+            this.maxResults += 3;
         }
         
     }

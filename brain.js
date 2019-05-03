@@ -33,7 +33,7 @@ class Brain{
 
     eventSearchItem(){
         var eventSearchRequest = $('#eventInput').val();
-        this.ticketmaster.getEventData(eventSearchRequest)
+        this.ticketmaster.currentLocation(eventSearchRequest)
         
     }
 
@@ -44,7 +44,7 @@ class Brain{
 
     eventUserChoice(){
         this.teamClicked = $(event.currentTarget).text();
-        this.ticketmaster.getEventData(this.teamClicked);
+        this.ticketmaster.currentLocation(this.teamClicked);
     }
 
     
@@ -72,9 +72,7 @@ class Brain{
 
         setInterval( () => {
             this.twitter.twitterAjaxCall(this.teamClicked)
-        }, 1000000)
-
-        
+        }, 100000)
 
         this.google = new GoogleNews();
         this.google.getData('nba');
@@ -83,7 +81,7 @@ class Brain{
         this.youtube.getData('nba');
         
         this.ticketmaster = new Ticketmaster();
-        this.ticketmaster.getEventData('nba');
+        this.ticketmaster.currentLocation('nba');
         
 
     }
