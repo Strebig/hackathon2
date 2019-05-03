@@ -76,7 +76,6 @@ header {
 ul .dropdown-menu {
     width: 97vh;
     height: 45vh;
-    /* background-color: black; */
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
