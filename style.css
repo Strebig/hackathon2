@@ -44,7 +44,7 @@ header {
 }
 .video img {
     width: 100px;
-    height: 100px;
+    /* height: 100px; */
 }
 .video {
     font-weight: bold;
@@ -73,13 +73,15 @@ header {
 
 }
 
-ul .dropdown-menu {
+
+
+ul#index.dropdown-menu {
     width: 97vh;
     height: 45vh;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
-.dropdown-menu li{
+.dropdown-menu li.team{
     width: 23vh;
     display: inline-block;
     height: 5vh;
@@ -90,7 +92,7 @@ ul .dropdown-menu {
     border-bottom-right-radius: 15px;
 }
 
-.dropdown-menu a{
+#index .dropdown-menu a{
     height: 100%;
 
 }

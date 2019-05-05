@@ -4,7 +4,6 @@ class GoogleNews {
     constructor() {
     this.getData = this.getData.bind(this);
     this.newsArticle = this.newsArticle.bind(this);
-    // this.currentLocation = this.currentLocation.bind(this);
     }
 
     getData(param) {

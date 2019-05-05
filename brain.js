@@ -1,6 +1,5 @@
 class Brain{
     constructor(){
-        // this.teams = ['Lakers', 'Celtics', 'Golden State Warriors'];
         var twitter, google, youtube;
         this.twitter;
         this.google;
@@ -11,7 +10,7 @@ class Brain{
         this.renderBtn = this.renderBtn.bind(this);
         this.searchItem = this.searchItem.bind(this);
         this.eventSearchItem = this.eventSearchItem.bind(this);
-        this.teamClicked = 'nba';
+        this.teamClicked = 'news';
 
     }
 
@@ -24,6 +23,8 @@ class Brain{
     clickHandler(){
         $('button.search').on('click', this.searchItem )
         $('button.eventSearchBtn').on('click', this.eventSearchItem)
+        debugger;
+        $('.category').on('click', this.userChoice)
     }
 
     searchItem(){
@@ -32,6 +33,7 @@ class Brain{
     }
 
     eventSearchItem(){
+        debugger;
         var eventSearchRequest = $('#eventInput').val();
         this.ticketmaster.currentLocation(eventSearchRequest)
         
@@ -49,18 +51,18 @@ class Brain{
 
     
 
-    ajaxCall( team ){
+    ajaxCall( userSearch ){
         //google news
         $('.news-feed').empty();
-        this.google.getData(team);
+        this.google.getData(userSearch);
 
         //twitter
         $('.twit').empty();
-        this.twitter.twitterAjaxCall(team);
+        this.twitter.twitterAjaxCall(userSearch);
 
         //youtube
         $('.video').empty();
-        this.youtube.getData(team);
+        this.youtube.getData(userSearch);
         
     }
 
@@ -72,13 +74,13 @@ class Brain{
 
         setInterval( () => {
             this.twitter.twitterAjaxCall(this.teamClicked)
-        }, 100000)
+        }, 5000)
 
         this.google = new GoogleNews();
-        this.google.getData('nba');
+        this.google.getData('news');
     
         this.youtube = new Youtube();
-        this.youtube.getData('nba');
+        this.youtube.getData('news');
         
         this.ticketmaster = new Ticketmaster();
         this.ticketmaster.currentLocation('nba');
@@ -107,12 +109,12 @@ class Brain{
 
 
     renderBtn( team ){
-        var listItem = $('<li>');
+        var listItem = $('<li>').addClass('team');
         var link = $('<a>').text(team).on('click', this.userChoice);
         listItem.append(link);
         $('#index').append(listItem);
 
-        var eventListItem = $('<li>')
+        var eventListItem = $('<li>').addClass('team')
         var eventLink = $('<a>').text(team).on('click', this.eventUserChoice);
         eventListItem.append(eventLink)
         $('#events').append(eventListItem);

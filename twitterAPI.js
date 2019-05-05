@@ -6,13 +6,13 @@ class Twitter{
         this.checkIdExists = this.checkIdExists.bind(this)
     }
 
-    twitterAjaxCall(team){
+    twitterAjaxCall(userSearch){
         
         var twitterAjax = {
             url: 'http://s-apis.learningfuze.com/hackathon/twitter/index.php',
             dataType: 'json',
             data:{
-                search_term: team
+                search_term: userSearch
             },
             success: twitterSuccess.bind(this),
             error: function(response){
