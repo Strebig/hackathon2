@@ -1,6 +1,5 @@
 class Brain{
     constructor(){
-        var twitter, google, youtube;
         this.twitter;
         this.google;
         this.youtube;
@@ -21,10 +20,9 @@ class Brain{
     }
 
     clickHandler(){
-        $('button.search').on('click', this.searchItem )
-        $('button.eventSearchBtn').on('click', this.eventSearchItem)
-        debugger;
-        $('.category').on('click', this.userChoice)
+        $('button.search').on('click', this.searchItem );
+        $('button.eventSearchBtn').on('click', this.eventSearchItem);
+        $('.category').on('click', this.userChoice);
     }
 
     searchItem(){
@@ -74,7 +72,7 @@ class Brain{
 
         setInterval( () => {
             this.twitter.twitterAjaxCall(this.teamClicked)
-        }, 5000)
+        }, 5000);
 
         this.google = new GoogleNews();
         this.google.getData('news');
@@ -84,8 +82,6 @@ class Brain{
         
         this.ticketmaster = new Ticketmaster();
         this.ticketmaster.currentLocation('nba');
-        
-
     }
 
     ballsDontLie(){
@@ -94,7 +90,7 @@ class Brain{
             method: 'get',
             url: "https://www.balldontlie.io/api/v1/teams",
             success: renderTeamName.bind(this)
-        }
+        };
 
         function renderTeamName(response){
             for (var value of response.data){
@@ -103,13 +99,12 @@ class Brain{
             }
         }
     
-        $.ajax(teams)
+        $.ajax(teams);
     }
 
 
 
     renderBtn( team ){
-        debugger;
         var listItem = $('<li>').addClass('team');
         var link = $('<a>').text(team).on('click', this.userChoice);
         listItem.append(link);

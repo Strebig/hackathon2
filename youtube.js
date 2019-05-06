@@ -9,7 +9,6 @@ class Youtube {
 
     // Youtube api
     getData (search) {
-        debugger;
         var userSearch = search.split(' ').join('+');
         let ajaxOptions = {
             url: 'https://www.googleapis.com/youtube/v3/search?part=snippet&relevaneLanguage=eng&maxResults=50&q='+userSearch+'&type=video&key=AIzaSyA5O8p3O4xkblZiUx9X0Kt-2HUKMdg802w',
@@ -45,7 +44,7 @@ class Youtube {
 
     videoSuccess(response) {
         // youtube data
-        this.videoData = response
+        this.videoData = response;
 
         // // lfz youtube data backup
         // this.videoData = Object.values(response.data);

@@ -16,7 +16,7 @@ class GoogleNews {
 
     }
     newsArticle(response) {
-        for (var index = 0; index < response.articles.length; index++){ //response.articles.length
+        for (var index = 0; index < response.articles.length; index++){
             let title = response.articles[index].title;
             let imgLink = response.articles[index].urlToImage;
             let imgInfo = $('<img>').attr('src', imgLink);

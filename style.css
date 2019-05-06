@@ -2,22 +2,15 @@
 body {
     background-color: #204d74;
 }
-
-button:active {
+button:active, .activeBtn {
     background-color: grey;
 }
-
-.activeBtn {
-    background-color: grey;
-}
-
 header {
     font-size: 50px;
 }
 .footer {
     height: 5vh;
 }
-
 .news-feed, .twit, .video{
     background-color: lightgrey;
     height: 75vh;
@@ -27,14 +20,13 @@ header {
 }
 .news-head {
     text-align: center;
-    font-size: x-large;
+    font-size: 24px;
     font-weight: bolder;
     margin-bottom: 5px;
     color: whitesmoke;
 }
 .news-feed img {
     width: 50px;
-    height: 50px;
     display: inline-block;
 }
 .news-feed > div > a > div {
@@ -44,12 +36,11 @@ header {
 }
 .video img {
     width: 100px;
-    /* height: 100px; */
 }
 .video {
     font-weight: bold;
     text-align: center;
-    font-size: large;
+    font-size: 18px;
 }
 .twitterContainer {
     border: 1px solid black;
@@ -61,61 +52,49 @@ header {
 .username {
     color: dodgerblue;
 }
-
 .input-group{
     margin-top: 7px;
     position: relative;
 }
-
 .news-head > img {
     width: 25px;
     height: 25px;
-
 }
-
-
-
-ul#index.dropdown-menu {
-    width: 97vh;
+ul#index.dropdown-menu, ul#events.dropdown-menu {
+    width: 60vw;
     height: 45vh;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
 .dropdown-menu li.team{
-    width: 23vh;
+    width: 20%;
+    overflow: hidden;
     display: inline-block;
-    height: 5vh;
     margin: 2px 4px;
     text-align: center;
     font-weight: bolder;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
-
 #index .dropdown-menu a{
     height: 100%;
-
+}
+.event_header, .event_container{
+    box-shadow: 2px 2px 2px rgb(55, 54, 54);
+    margin-bottom: 10px;
+    border-radius: 10px;
+    margin-left: 15%;
 }
 .event_header{
     background-color: lightgray;
-    margin-left: 15%;
-    margin-bottom: 10px;
     height: 15%;
-    border-radius: 10px;
     text-align: center;
     font-size: 40px;
-    box-shadow: 2px 2px 2px rgb(55, 54, 54);
-    
 }
 .event_container{
-    box-shadow: 2px 2px 2px rgb(55, 54, 54);
-    margin-left: 15%;
-    margin-bottom: 10px;
     background-color: white;
     height: 100%;
     font-size: 25px;
-    border-radius: 10px;
-
 }
 .events{
     overflow-y: scroll;
@@ -133,5 +112,5 @@ ul#index.dropdown-menu {
       height: auto;
       padding: 15px;
     }
-    .row.content {height:auto;} 
-  }
+    .row.content {height:auto;}
+}

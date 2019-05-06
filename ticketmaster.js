@@ -1,7 +1,6 @@
 class Ticketmaster {
     constructor(events) {
         this.events = events;
-        // this.getEventData = this.getEventData.bind(this);
         this.onLoad = false;
         this.currentLocation = this.currentLocation.bind(this);
 
