@@ -109,6 +109,7 @@ class Brain{
 
 
     renderBtn( team ){
+        debugger;
         var listItem = $('<li>').addClass('team');
         var link = $('<a>').text(team).on('click', this.userChoice);
         listItem.append(link);

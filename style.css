@@ -104,10 +104,11 @@ ul#index.dropdown-menu {
     border-radius: 10px;
     text-align: center;
     font-size: 40px;
+    box-shadow: 2px 2px 2px rgb(55, 54, 54);
     
 }
 .event_container{
-    
+    box-shadow: 2px 2px 2px rgb(55, 54, 54);
     margin-left: 15%;
     margin-bottom: 10px;
     background-color: white;
@@ -125,5 +126,12 @@ ul#index.dropdown-menu {
     font-size: 18px;
     background-color: #009cde;
     color: white;
-    box-shadow: 2px 2px 2px grey;
+    box-shadow: 1px 1px 1px grey;
 }
+@media screen and (max-width: 767px) {
+    .sidenav {
+      height: auto;
+      padding: 15px;
+    }
+    .row.content {height:auto;} 
+  }

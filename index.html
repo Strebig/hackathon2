@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -20,13 +21,20 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">Sports Insider</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                </button>
         </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
             <li class="active"><a href="index.html">Home</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle='dropdown'>Categories
-                <span class="caret"></span></a>
-                <ul class="dropdown-menu">
+                    <span class="caret"></span>
+                </a>
+                <ul id='categories' class="dropdown-menu">
                     <li class='categories'>
                         <a class='category'>Business</a>
                         <a class='category'>Politics</a>
@@ -54,22 +62,23 @@
             </div>
         </div>
     </div>
+    </div>
 </nav>
 
-<div class="main col-xs-12">
-    <div class="news-container col-xs-3">
+<div class="main">
+    <div class="news-container col-sm-3">
         <div class="news-head">News Feed</div>
         <div class="news-feed">
 
         </div>
     </div>
-    <div class="video-container col-xs-6">
+    <div class="video-container col-sm-6">
         <div class="news-head">Recent Videos <img src="images/ytube.png" alt="youtube icon"></div>
         <div class="video col-xs-12">
 
         </div>
     </div>
-    <div class="twitter-container col-xs-3">
+    <div class="twitter-container col-sm-3">
         <div class="news-head">Twitter Feed <img src="images/twit.png" alt="twitter icon"></div>
         <div class="twit col-sx-12"></div>
     </div>
